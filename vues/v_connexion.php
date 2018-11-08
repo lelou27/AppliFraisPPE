@@ -12,9 +12,9 @@
         </p>
         <p>
             <label for="identite">Visiteur</label>
-            <input type="radio" name="identite" value="visiteur">
+            <input type="radio" name="identite" value="visiteur" required>
             <label for="identite">Comptable</label>
-            <input type="radio" name="identite" value="comptable">
+            <input type="radio" name="identite" value="comptable" required>
         </p>
         <p>
             <input type="submit" value="Valider" name="valider">
