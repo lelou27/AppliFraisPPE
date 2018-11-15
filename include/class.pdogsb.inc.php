@@ -246,8 +246,9 @@ class PdoGsb{
 */
 	public function creeNouveauFraisHorsForfait($idVisiteur,$mois,$libelle,$date,$montant){
 		$dateFr = dateFrancaisVersAnglais($date);
-		$req = "insert into LigneFraisHorsForfait
-		values('','$idVisiteur','$mois','$libelle','$dateFr','$montant')";
+		$req = "insert into LigneFraisHorsForfait (idVisiteurFicheFrais, moisFicheFrais, libelle, date, montant)
+		values('$idVisiteur','$mois','$libelle','$dateFr','$montant')";
+
 		PdoGsb::$monPdo->exec($req);
 	}
 /**
@@ -256,7 +257,7 @@ class PdoGsb{
  * @param $idfrais 
 */
 	public function supprimerFraisHorsForfait($idFrais){
-		$req = "delete from LigneFraisHorsForfait where LigneFraisHorsForfait.id =$idFrais ";
+		$req = "delete from LigneFraisHorsForfait where LigneFraisHorsForfait.id = $idFrais ";
 		PdoGsb::$monPdo->exec($req);
 	}
 /**
